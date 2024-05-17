@@ -34,7 +34,7 @@ private TorpedoStore primary, secondary;
     assertEquals(true, result);
 
     verify(primary, times(1)).fire(1);
-    verify(primary, times(0)).fire(1);
+    verify(secondary, times(0)).fire(1);
   }
 
   @Test
@@ -52,7 +52,7 @@ private TorpedoStore primary, secondary;
     assertEquals(true, result);
 
     verify(primary, times(1)).fire(1);
-    verify(primary, times(1)).fire(1);
+    verify(secondary, times(1)).fire(1);
   }
 
 }
