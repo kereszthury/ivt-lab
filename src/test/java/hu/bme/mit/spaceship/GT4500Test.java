@@ -23,6 +23,7 @@ private TorpedoStore primary, secondary;
   @Test
   public void fireTorpedo_Single_Success(){
     // Arrange
+    when(primary.isEmpty()).thenReturn(false);
     when(primary.fire(1)).thenReturn(true);
     when(secondary.fire(1)).thenReturn(false);
 
@@ -39,6 +40,8 @@ private TorpedoStore primary, secondary;
   @Test
   public void fireTorpedo_All_Success(){
     // Arrange
+    when(primary.isEmpty()).thenReturn(false);
+    when(secondary.isEmpty()).thenReturn(false);
     when(primary.fire(1)).thenReturn(true);
     when(secondary.fire(1)).thenReturn(false);
 
